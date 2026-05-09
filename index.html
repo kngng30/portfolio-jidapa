@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jidapa Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+    radial-gradient(circle at top left,#60a5fa 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#38bdf8 0%,transparent 30%),
+    linear-gradient(135deg,#eff6ff,#dbeafe,#ffffff);
+
+    color:#0f172a;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(12px);
+    background:rgba(255,255,255,0.4);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#1e3a8a;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 8% 60px;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.hero-left{
+    flex:1;
+    min-width:320px;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:50px;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(10px);
+    color:#2563eb;
+    font-size:14px;
+    font-weight:600;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.hero-left h1{
+    font-size:68px;
+    line-height:1.1;
+    margin:25px 0 20px;
+    font-weight:700;
+}
+
+.hero-left h1 span{
+    color:#2563eb;
+}
+
+.subtitle{
+    font-size:22px;
+    color:#475569;
+    margin-bottom:20px;
+}
+
+.description{
+    color:#475569;
+    line-height:1.9;
+    font-size:17px;
+    max-width:550px;
+}
+
+/* BUTTONS */
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 32px;
+    border-radius:16px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.primary{
+    background:linear-gradient(to right,#2563eb,#38bdf8);
+    color:white;
+    box-shadow:0 12px 30px rgba(37,99,235,0.3);
+}
+
+.primary:hover{
+    transform:translateY(-5px);
+}
+
+.secondary{
+    background:white;
+    color:#2563eb;
+    border:2px solid #93c5fd;
+}
+
+.secondary:hover{
+    background:#eff6ff;
+}
+
+/* RIGHT CARD */
+
+.hero-right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    min-width:320px;
+}
+
+.profile-card{
+    width:390px;
+    padding:35px;
+    border-radius:35px;
+    background:rgba(255,255,255,0.55);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,0.4);
+    box-shadow:0 20px 45px rgba(0,0,0,0.12);
+    text-align:center;
+    position:relative;
+}
+
+.profile-card::before{
+    content:'';
+    position:absolute;
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:#93c5fd;
+    top:-50px;
+    right:-50px;
+    opacity:0.4;
+}
+
+.profile-img{
+    width:250px;
+    height:320px;
+    object-fit:cover;
+    border-radius:28px;
+    border:5px solid white;
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+    margin-bottom:25px;
+}
+
+.profile-card h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.profile-card p{
+    color:#64748b;
+}
+
+.student-box{
+    margin-top:25px;
+    padding:18px;
+    border-radius:20px;
+    background:linear-gradient(to right,#2563eb,#38bdf8);
+    color:white;
+}
+
+.student-box small{
+    opacity:0.85;
+}
+
+/* SECTION */
+
+.section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+    color:#1e3a8a;
+}
+
+/* CARDS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(12px);
+    padding:35px;
+    border-radius:28px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#2563eb;
+    margin-bottom:18px;
+    font-size:26px;
+}
+
+.card p,
+.card li{
+    color:#475569;
+    line-height:1.9;
+}
+
+.card ul{
+    padding-left:20px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#64748b;
+    font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav{
+        padding:18px 5%;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding-top:140px;
+    }
+
+    .hero-left h1{
+        font-size:48px;
+    }
+
+    .description{
+        margin:auto;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        Jidapa.
+    </div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Goal</a></li>
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="badge">
+            ✦ LOGISTICS & TRANSPORTATION STUDENT
+        </div>
+
+        <h1>
+            Hello, I'm <br>
+            <span>Jidapa</span> Inmuang
+        </h1>
+
+        <p class="subtitle">
+            คณะโลจิสติกส์และการคมนาคมขนส่ง
+        </p>
+
+        <p class="description">
+            เป็นนักศึกษาที่มีความสนใจด้านโลจิสติกส์
+            การคมนาคมขนส่ง และการบริหารจัดการระบบขนส่งสมัยใหม่
+            มีความรับผิดชอบ รักการเรียนรู้
+            และสามารถทำงานร่วมกับผู้อื่นได้ดี
+        </p>
+
+        <div class="buttons">
+
+            <a href="#" class="btn primary">
+                Portfolio
+            </a>
+
+            <a href="#" class="btn secondary">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="profile-card">
+
+            <img src="465336.jpg" class="profile-img">
+
+            <h2>
+                นางสาว จิดาภา อินทร์เมือง
+            </h2>
+
+            <p>
+                Panyapiwat Institute of Management
+            </p>
+
+            <div class="student-box">
+
+                <small>Student ID</small>
+
+                <h3>
+                    6650100277
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- INFO -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        About Me
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>
+                Education
+            </h3>
+
+            <p>
+                สถาบันการจัดการปัญญาภิวัฒน์ (PIM)
+                <br>
+                Faculty of Logistics and Transportation
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Skills
+            </h3>
+
+            <ul>
+                <li>Communication Skills</li>
+                <li>Teamwork</li>
+                <li>Microsoft Office</li>
+                <li>Time Management</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Future Goal
+            </h3>
+
+            <p>
+                ต้องการพัฒนาทักษะและประสบการณ์
+                เพื่อเติบโตในสายงานโลจิสติกส์
+                และการคมนาคมขนส่งในระดับมืออาชีพ
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Portfolio by Jidapa Inmuang
+</footer>
+
+</body>
+</html>
